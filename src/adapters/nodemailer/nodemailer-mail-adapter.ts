@@ -1,8 +1,5 @@
 import nodemailer from 'nodemailer';
-import { config } from 'dotenv';
 import { MailAdapter, SendMailData } from "../mail-adapter";
-
-config();
 
 const transport = nodemailer.createTransport({
   host: "smtp.mailgun.org",
@@ -21,5 +18,6 @@ export class NodemailerMailAdapter implements MailAdapter {
       subject,
       html: body,
     })
+    console.log(process.env.SMTP_USER, process.env.SMTP_PWD);
   };
 }
