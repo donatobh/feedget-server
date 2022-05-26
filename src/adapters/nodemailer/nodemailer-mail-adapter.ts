@@ -13,8 +13,8 @@ const transport = nodemailer.createTransport({
 export class NodemailerMailAdapter implements MailAdapter {
   async sendMail({subject, body}: SendMailData) {
     await transport.sendMail({
-      from: 'Equipe Feedget<feedget@donatobh.com.br>',
-      to: 'Dieimes Donato <donatobh@gmail.com>',
+      from: 'Equipe Feedget<postmaster@sandbox3c4c9d6a06fc42a1b4e96bd67c70531b.mailgun.org>',
+      to: 'Dieimes Donato <dieimes@yahoo.com.com>',
       subject,
       html: body,
     })
