@@ -1,13 +1,11 @@
 import nodemailer from 'nodemailer';
 import { MailAdapter, SendMailData } from "../mail-adapter";
 
-console.log(process.env.SMTP_USER, process.env.SMTP_PWD);
-
 const transport = nodemailer.createTransport({
   host: "smtp.mailgun.org",
   port: 587,
   auth: {
-    user: process.env.SMTP_USER,
+    user: process.env.SMTP_USERNAME,
     pass: process.env.SMTP_PWD
   }
 });
